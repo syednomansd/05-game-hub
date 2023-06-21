@@ -3,7 +3,7 @@ import apiClient from "../services/api-client";
 import { FetchResponse } from "./useData";
 import genres from "../data/genres";
 
-export interface Genres {
+export interface Genre {
   id: number;
   name: string;
   image_background: string;
@@ -13,8 +13,8 @@ const useGenres = () =>
   useQuery({
     queryKey: ["genres"],
     queryFn: () =>
-      apiClient.get<FetchResponse<Genres>>("/genres").then((res) => res.data),
-    staleTime: 24 * 60 * 60 * 1000,
+      apiClient.get<FetchResponse<Genre>>("/genres").then((res) => res.data),
+    staleTime: 24 * 60 * 60 * 1000, //24h
     initialData: { count: genres.length, results: genres },
   });
 

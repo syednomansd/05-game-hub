@@ -4,13 +4,13 @@ import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
-import { Genres } from "./hooks/useGenres";
+import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-  genre: Genres | null;
+  genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
